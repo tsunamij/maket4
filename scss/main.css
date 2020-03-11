@@ -804,6 +804,17 @@ ul {
   margin-top: 40px;
 }
 
+.recent .active {
+  display: block !important;
+  transition: ease-in .3s;
+}
+.recent div {
+  transition: ease-in .3s;
+  display: none;
+}
+.recent .tab-2-content, .recent .tab-1-content {
+  transition: ease-in .7s;
+}
 .news .recent,
 .news .anounces {
   border-right: 2px solid #eee;
@@ -892,6 +903,9 @@ ul {
   padding: 25px 0;
   background: #f2fcff;
 }
+.projects-item span {
+  overflow: hidden;
+}
 
 .projects-item-main {
   display: -webkit-box;
@@ -977,6 +991,8 @@ ul {
 
 .projects-item span {
   margin: 10px;
+  overflow: hidden;
+  height: 40px;
 }
 
 .projects-item:nth-child(2) {
@@ -1105,9 +1121,13 @@ ul {
   float: right;
 }
 
-/*==========  Desktop First  ==========*/
-@media (max-width: 1200px) {
+/*========= bp ==========*/
 
+@media (min-width: 1200px) {
+  .projects-item span {
+    margin: 10px;
+    height: 40px !important;
+  }
 }
 @media (max-width: 991px) {
   .header-logo {
@@ -1176,6 +1196,28 @@ ul {
     display: flex;
     justify-content: space-between;
   }
+  .projects-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background: #fff;
+    height: 380px;
+    overflow: hidden;
+  }
+  .projects-item-main, .projects-item {
+    margin-bottom: 40px;
+  }
+  .projects-item span, .projects-item-main span {
+    overflow: hidden;
+  }
+  .projects-item span {
+    height: auto !important;
+  }
+ 
 }
 @media (max-width: 768px) {
   .header-info, .news-info {

@@ -41,6 +41,8 @@ $(function() {
 	$('.header-slider-left').click(function() {
 		owl.trigger('prev.owl.carousel');
 	});
+
+
 	$(function () {
 		$("#accordion").accordion();
 	});
@@ -50,6 +52,7 @@ $(function() {
 	$('.lk-btn').click(function () {
 		$('.accord-2').toggleClass('accord-2-active');
 	});
+
 	$('#calendar').datepicker({
 		inline: true,
 		firstDay: 1,
@@ -60,6 +63,7 @@ $(function() {
 			'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
 		dayNamesMin: ['ВС', 'ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ']
 	});
+
 	var navBtn = $('.navbar-btn');
 	var navMenu = $('.nav-list');
 	//hamburger btn behavior starts here
@@ -67,4 +71,28 @@ $(function() {
 		navBtn.toggleClass('navbar-btn-active');
 		navMenu.toggleClass('nav-list-active');
 	});
+
+	var newsTabs = $('.h-tabs'); 
+	var newsTab1 = $('.news-tab-1');
+	var newsTab2 = $('.news-tab-2');
+	var newsTab1_content = $('.recent .tab-1-content');
+	var newsTab2_content = $('.recent .tab-2-content')
+	newsTab1.click(function(e) {
+		if(newsTab1.hasClass('active')) {
+			newsTab1.removeClass('active');
+		};
+		e.preventDefault();
+		newsTab1.toggleClass('active');
+		newsTab2.removeClass('active');
+		newsTab1_content.toggleClass('active');
+		newsTab2_content.removeClass('active');
+	});
+	newsTab2.click(function(e) {
+		e.preventDefault();
+		newsTab2.toggleClass('active');
+		newsTab1.removeClass('active');
+		newsTab2_content.toggleClass('active');
+		newsTab1_content.removeClass('active');
+	});
+
 });
